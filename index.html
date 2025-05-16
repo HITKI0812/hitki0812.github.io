@@ -122,32 +122,6 @@
       text-decoration: none;
     }
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 8px;
-      background: #1e293b;
-      color: #f1f5f9;
-    }
-
-    form button {
-      background-color: #10b981;
-      color: #0f172a;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    form button:hover {
-      background-color: #0f766e;
-    }
-
     .social-icons a {
       font-size: 1.8rem;
       margin: 0 15px;
@@ -157,6 +131,22 @@
 
     .social-icons a:hover {
       transform: scale(1.1);
+    }
+
+    .boton-formulario {
+      background-color: #10b981;
+      color: #0f172a;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .boton-formulario:hover {
+      background-color: #0f766e;
     }
 
     @keyframes fadeIn {
@@ -219,14 +209,13 @@
 
   <section id="contacto" class="section">
     <h2>Contacto</h2>
-    <p style="color: #cbd5e1; margin-bottom: 30px;">¿Tienes un proyecto o necesitas soporte IT? ¡Escríbeme!</p>
+    <p style="color: #cbd5e1; margin-bottom: 30px;">
+      ¿Tienes un proyecto o necesitas soporte IT? Puedes escribirme directamente en el siguiente formulario:
+    </p>
 
-    <form action="https://formsubmit.co/charlshitki@gmail.com" method="POST" style="max-width: 500px; margin: 0 auto;">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="correo" placeholder="Tu correo electrónico" required>
-      <textarea name="mensaje" placeholder="Tu mensaje" required rows="5"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+    <a href="https://forms.gle/KzmqCJLJJkeuKk3m8" target="_blank" class="boton-formulario">
+      Abrir formulario de contacto
+    </a>
 
     <div class="social-icons" style="margin-top: 40px;">
       <a href="https://github.com/HITKI0812" target="_blank" title="GitHub" style="color: #f1f5f9;">
