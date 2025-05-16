@@ -1,50 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio de Joshuan Alvarado</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0f172a;
       color: #f1f5f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-      margin: 0;
     }
-    h1 {
+
+    header {
+      background-color: #0f172a;
+      padding: 20px 40px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    header h2 {
+      color: #10b981;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: #f1f5f9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #10b981;
+    }
+
+    .section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    #inicio h1 {
       font-size: 3rem;
+      margin-bottom: 20px;
       animation: fadeInDown 1s ease-in-out;
     }
-    p {
+
+    #inicio p {
       font-size: 1.2rem;
       color: #94a3b8;
-      margin-bottom: 30px;
       animation: fadeIn 2s ease-in-out;
     }
-    .boton {
-      padding: 12px 25px;
-      border: 2px solid #10b981;
+
+    #sobremi h2, #proyectos h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
       color: #10b981;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s ease;
+    }
+
+    #sobremi p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #f1f5f9;
+    }
+
+    .card p {
+      color: #cbd5e1;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #10b981;
       font-weight: bold;
+      text-decoration: none;
     }
-    .boton:hover {
-      background-color: #10b981;
-      color: #0f172a;
-    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -52,8 +129,53 @@
   </style>
 </head>
 <body>
-  <h1>Hola, soy Joshuan Alvarado</h1>
-  <p>Técnico en Sistemas | Redes | Soporte | Freelance IT</p>
-  <a href="#" class="boton">Bienvenido a mi portafolio personal</a>
+
+  <header>
+    <h2>Joshuan Alvarado</h2>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobremi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="section">
+    <h1>Hola, soy Joshuan Alvarado</h1>
+    <p>Técnico en Sistemas | Redes | Soporte | Freelance IT</p>
+  </section>
+
+  <section id="sobremi" class="section">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy técnico en sistemas y redes con más de 9 años de experiencia en soporte técnico, administración de infraestructura IT, y desarrollo de soluciones digitales. Me apasiona optimizar sistemas, implementar redes empresariales seguras y crear herramientas que automaticen procesos críticos.
+    </p>
+  </section>
+
+  <section id="proyectos" class="section">
+    <h2>Proyectos</h2>
+    <div class="proyectos-grid">
+      
+      <div class="card">
+        <h3>Sistema de Tickets IT</h3>
+        <p>Aplicación web para registrar y dar seguimiento a incidencias técnicas.</p>
+        <a href="#">Ver proyecto</a>
+      </div>
+
+      <div class="card">
+        <h3>Dashboard de Red</h3>
+        <p>Monitoreo de dispositivos conectados con scripts y consultas SQL.</p>
+        <a href="#">Ver proyecto</a>
+      </div>
+
+      <div class="card">
+        <h3>Sitio Web Portafolio</h3>
+        <p>Diseño moderno de este portafolio profesional en HTML, CSS y animaciones.</p>
+        <a href="https://hitki0812.github.io" target="_blank">Ver proyecto</a>
+      </div>
+
+    </div>
+  </section>
+
 </body>
 </html>
