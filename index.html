@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio de Joshuan Alvarado</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e8f8d50a.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -67,7 +68,7 @@
       animation: fadeIn 2s ease-in-out;
     }
 
-    #sobremi h2, #proyectos h2 {
+    h2 {
       font-size: 2rem;
       margin-bottom: 30px;
       color: #10b981;
@@ -117,6 +118,43 @@
       text-decoration: none;
     }
 
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #f1f5f9;
+    }
+
+    form button {
+      background-color: #10b981;
+      color: #0f172a;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background-color: #0f766e;
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -155,7 +193,6 @@
   <section id="proyectos" class="section">
     <h2>Proyectos</h2>
     <div class="proyectos-grid">
-      
       <div class="card">
         <h3>Sistema de Tickets IT</h3>
         <p>Aplicación web para registrar y dar seguimiento a incidencias técnicas.</p>
@@ -173,7 +210,33 @@
         <p>Diseño moderno de este portafolio profesional en HTML, CSS y animaciones.</p>
         <a href="https://hitki0812.github.io" target="_blank">Ver proyecto</a>
       </div>
+    </div>
+  </section>
 
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p style="color: #cbd5e1; margin-bottom: 30px;">¿Tienes un proyecto o necesitas soporte IT? ¡Escríbeme!</p>
+
+    <form action="https://formsubmit.co/tucorreo@ejemplo.com" method="POST" style="max-width: 500px; margin: 0 auto;">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="correo" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" placeholder="Tu mensaje" required rows="5"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="social-icons" style="margin-top: 40px;">
+      <a href="https://github.com/HITKI0812" target="_blank" title="GitHub" style="color: #f1f5f9;">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://wa.me/502XXXXXXXX" target="_blank" title="WhatsApp" style="color: #25D366;">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:tucorreo@ejemplo.com" title="Correo" style="color: #f1f5f9;">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" title="LinkedIn" style="color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
     </div>
   </section>
 
