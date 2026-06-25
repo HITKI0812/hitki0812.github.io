@@ -1,262 +1,348 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio de Joshuan Alvarado</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Portfolio of Joshuan Alvarado, Systems Engineering student focused on .NET backend development, QA testing, databases and technical support." />
+  <title>Joshuan Alvarado | Portfolio</title>
 
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
-    html {
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f172a;
-      color: #f1f5f9;
-    }
-
-    header {
-      background-color: #0f172a;
-      padding: 20px 40px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1e293b;
-    }
-
-    header h2 {
-      color: #10b981;
-      font-size: 1.5rem;
-    }
-
-    nav a {
-      color: #f1f5f9;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #10b981;
-    }
-
-    .section {
-      padding: 100px 20px;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    #inicio h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    #inicio p {
-      font-size: 1.2rem;
-      color: #94a3b8;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #10b981;
-    }
-
-    #sobremi p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #cbd5e1;
-    }
-
-    .proyectos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background-color: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #f1f5f9;
-    }
-
-    .card p {
-      color: #cbd5e1;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #10b981;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .social-icons {
-      margin-top: 40px;
-      font-size: 1.2rem;
-      text-align: left;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .social-icons p {
-      margin-bottom: 10px;
-    }
-
-    .social-icons i {
-      margin-right: 8px;
-    }
-
-    .social-icons a {
-      color: #f1f5f9;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      text-decoration: underline;
-    }
-
-    .boton-formulario {
-      background-color: #10b981;
-      color: #0f172a;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    .boton-formulario:hover {
-      background-color: #0f766e;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="page-bg"></div>
 
-  <header>
-    <h2>Joshuan Alvarado</h2>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobremi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">J</span>
+        <span>Joshuan.dev</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="inicio" class="section">
-    <h1>Hola, soy Joshuan Alvarado</h1>
-    <p>Técnico en Sistemas | Redes | Soporte | Freelance IT</p>
-  </section>
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Systems Engineering Student · Guatemala</p>
 
-  <section id="sobremi" class="section">
-    <h2>Sobre mí</h2>
-    <p>
-      Soy técnico en sistemas y redes con más de 9 años de experiencia en soporte técnico, administración de infraestructura IT, y desarrollo de soluciones digitales. Me apasiona optimizar sistemas, implementar redes empresariales seguras y crear herramientas que automaticen procesos críticos.
-    </p>
-  </section>
+          <h1>
+            Hi, I'm <span>Joshuan Alvarado</span>
+          </h1>
 
-  <section id="proyectos" class="section">
-    <h2>Proyectos</h2>
-    <div class="proyectos-grid">
-      <div class="card">
-        <h3>Sistema de Tickets IT</h3>
-        <p>Aplicación web para registrar y dar seguimiento a incidencias técnicas.</p>
-        <a href="#">Ver proyecto</a>
+          <p class="hero-subtitle">
+            .NET Backend Jr. · QA Analyst Jr. · Databases · Technical Support
+          </p>
+
+          <p class="hero-description">
+            I build practical software solutions focused on backend development, REST APIs,
+            database management, QA testing and technical documentation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="https://github.com/HITKI0812" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Profile</a>
+          </div>
+
+          <div class="quick-stats" aria-label="Portfolio highlights">
+            <div>
+              <strong>Backend</strong>
+              <span>.NET / C# / APIs</span>
+            </div>
+            <div>
+              <strong>QA</strong>
+              <span>Postman / Test Cases</span>
+            </div>
+            <div>
+              <strong>Data</strong>
+              <span>SQL / Excel / Reports</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-card" aria-label="Developer terminal preview">
+          <div class="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="terminal-body">
+            <p><span class="prompt">$</span> whoami</p>
+            <p class="terminal-output">Joshuan Alvarado</p>
+
+            <p><span class="prompt">$</span> current_focus</p>
+            <p class="terminal-output">Backend Development · QA Testing · Databases</p>
+
+            <p><span class="prompt">$</span> tech_stack</p>
+            <p class="terminal-output">C# · .NET · Java · SQL · Postman · GitHub</p>
+
+            <p><span class="prompt">$</span> status</p>
+            <p class="terminal-output success">Building real projects and documenting progress...</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Dashboard de Red</h3>
-        <p>Monitoreo de dispositivos conectados con scripts y consultas SQL.</p>
-        <a href="#">Ver proyecto</a>
-      </div>
+    <section class="section" id="about">
+      <div class="container two-column">
+        <div>
+          <p class="section-label">About Me</p>
+          <h2>Focused on practical technology, clean structure and real problem solving.</h2>
+        </div>
 
-      <div class="card">
-        <h3>Sitio Web Portafolio</h3>
-        <p>Diseño moderno de este portafolio profesional en HTML, CSS y animaciones.</p>
-        <a href="https://hitki0812.github.io" target="_blank">Ver proyecto</a>
+        <div class="about-card">
+          <p>
+            I am a Systems Engineering student from Guatemala, currently strengthening my skills
+            in software development, backend APIs, databases, QA analysis and technical support.
+          </p>
+          <p>
+            My goal is to grow as a Junior Backend Developer or QA Analyst by creating organized,
+            functional and well-documented projects that demonstrate technical knowledge and attention to detail.
+          </p>
+
+          <div class="about-tags">
+            <span>Backend Development</span>
+            <span>REST APIs</span>
+            <span>QA Testing</span>
+            <span>Databases</span>
+            <span>Technical Documentation</span>
+            <span>Process Automation</span>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Skills</p>
+          <h2>Technologies and tools I use</h2>
+          <p>
+            A focused stack for backend development, testing, databases and documentation.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Backend & Programming</h3>
+            <div class="skill-list">
+              <span>C#</span>
+              <span>.NET Web API</span>
+              <span>Java</span>
+              <span>REST APIs</span>
+              <span>Entity Framework Core</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Databases & Data</h3>
+            <div class="skill-list">
+              <span>SQL Server</span>
+              <span>MySQL</span>
+              <span>Microsoft Access</span>
+              <span>SQL Queries</span>
+              <span>Excel Reports</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>QA & Testing</h3>
+            <div class="skill-list">
+              <span>Postman</span>
+              <span>API Testing</span>
+              <span>Manual Testing</span>
+              <span>Test Cases</span>
+              <span>Bug Reports</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Frontend & Tools</h3>
+            <div class="skill-list">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Featured Projects</p>
+          <h2>Projects that represent my technical growth</h2>
+          <p>
+            Each project is being improved with better documentation, structure and testing evidence.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured">
+            <div class="project-header">
+              <span class="project-icon">🧾</span>
+              <span class="project-status">Main Project</span>
+            </div>
+            <h3>InventoryApi</h3>
+            <p>
+              REST API for inventory management built with .NET, C#, Entity Framework Core and SQL Server.
+              Includes CRUD operations, database connection, API endpoints and Postman testing.
+            </p>
+            <div class="project-tech">
+              <span>.NET</span>
+              <span>C#</span>
+              <span>SQL Server</span>
+              <span>Postman</span>
+            </div>
+            <a href="https://github.com/HITKI0812/InventoryApi" target="_blank" rel="noopener noreferrer">View Repository →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-icon">☕</span>
+              <span class="project-status">Java</span>
+            </div>
+            <h3>Java Swing Demo</h3>
+            <p>
+              Desktop application built with Java Swing, including calculations, CSV export and interface design.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Swing</span>
+              <span>CSV</span>
+            </div>
+            <a href="https://github.com/HITKI0812/hola-idea" target="_blank" rel="noopener noreferrer">View Repository →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-icon">🌐</span>
+              <span class="project-status">Portfolio</span>
+            </div>
+            <h3>Portfolio Website</h3>
+            <p>
+              Personal website created to present my skills, projects, learning roadmap and professional contact links.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <a href="https://github.com/HITKI0812/hitki0812.github.io" target="_blank" rel="noopener noreferrer">View Repository →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-icon">🧪</span>
+              <span class="project-status">In Progress</span>
+            </div>
+            <h3>QA Testing Portfolio</h3>
+            <p>
+              Repository planned for test cases, bug reports, Postman collections, API testing evidence and QA documentation.
+            </p>
+            <div class="project-tech">
+              <span>QA</span>
+              <span>Postman</span>
+              <span>Documentation</span>
+            </div>
+            <a href="#contact">Coming Soon →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Learning Roadmap</p>
+          <h2>What I am currently improving</h2>
+          <p>
+            A clear path to strengthen my profile as a backend developer and QA analyst.
+          </p>
+        </div>
+
+        <div class="roadmap">
+          <div class="roadmap-item">
+            <span>01</span>
+            <div>
+              <h3>Backend Development</h3>
+              <p>.NET Web API, Entity Framework Core, SQL Server, REST architecture and API documentation.</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>02</span>
+            <div>
+              <h3>QA Analyst</h3>
+              <p>Manual testing, test cases, bug reports, Postman API testing and evidence documentation.</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>03</span>
+            <div>
+              <h3>Databases & Data</h3>
+              <p>SQL queries, database design, data validation, Excel automation and reporting.</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>04</span>
+            <div>
+              <h3>Portfolio Growth</h3>
+              <p>Improving GitHub repositories with better README files, project structure and technical documentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-card">
+        <p class="section-label">Contact</p>
+        <h2>Let's connect</h2>
+        <p>
+          I am open to learning opportunities, junior roles, QA practice projects and backend development challenges.
+        </p>
+
+        <div class="contact-actions">
+          <a href="mailto:joshuanalvarado.dev@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://www.linkedin.com/in/jav18" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
+          <a href="https://github.com/HITKI0812" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Joshuan Alvarado. Built with HTML, CSS and JavaScript.</p>
+      <a href="#home">Back to top ↑</a>
     </div>
-  </section>
+  </footer>
 
-  <section id="contacto" class="section">
-    <h2>Contacto</h2>
-    <p style="color: #cbd5e1; margin-bottom: 30px;">
-      ¿Tienes un proyecto o necesitas soporte IT? Puedes escribirme directamente en el siguiente formulario:
-    </p>
-
-    <a href="https://forms.gle/KzmqCJLJJkeuKk3m8" target="_blank" class="boton-formulario">
-      Abrir formulario de contacto
-    </a>
-
-<div class="social-icons">
-  <p>
-    <a href="https://github.com/HITKI0812" target="_blank" style="color: #f1f5f9; text-decoration: none;">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </p>
-  <p>
-    <a href="https://wa.me/50235856406" target="_blank" style="color: #f1f5f9; text-decoration: none;">
-      <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp
-    </a>
-  </p>
-  <p>
-    <a href="mailto:charlshitki@gmail.com" style="color: #f1f5f9; text-decoration: none;">
-      <i class="fas fa-envelope"></i> Correo
-    </a>
-  </p>
-  <p>
-    <a href="https://www.linkedin.com/in/jav8/" target="_blank" style="color: #f1f5f9; text-decoration: none;">
-      <i class="fab fa-linkedin" style="color: #0A66C2;"></i> LinkedIn
-    </a>
-  </p>
-</div>
-  </section>
-
+  <script src="script.js"></script>
 </body>
 </html>
