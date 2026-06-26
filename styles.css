@@ -546,3 +546,214 @@ h2 {
     text-align: center;
   }
 }
+
+/* Interactive Skills Map */
+.skills-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.skills-map-card,
+.skill-details {
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  border-radius: var(--radius);
+}
+
+.skills-map-card {
+  padding: 18px;
+  min-height: 560px;
+}
+
+.skills-map {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.14), transparent 24%),
+    radial-gradient(circle at 82% 28%, rgba(167, 139, 250, 0.12), transparent 25%),
+    radial-gradient(circle at 20% 76%, rgba(52, 211, 153, 0.10), transparent 25%),
+    rgba(2, 6, 23, 0.42);
+}
+
+.skills-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+  pointer-events: none;
+}
+
+.skills-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.skill-line {
+  stroke: rgba(148, 163, 184, 0.30);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+  transition: stroke 0.25s ease, stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+.skill-line.active {
+  stroke: var(--primary);
+  stroke-width: 4;
+  opacity: 1;
+}
+
+.skill-node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  min-width: 132px;
+  min-height: 72px;
+  padding: 12px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.86);
+  color: var(--white);
+  cursor: pointer;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  text-align: center;
+  z-index: 2;
+}
+
+.skill-node strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.skill-node span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+.skill-node.small {
+  min-width: 104px;
+  min-height: 48px;
+  padding: 9px 11px;
+  border-radius: 16px;
+}
+
+.skill-node.small strong {
+  font-size: 0.78rem;
+}
+
+.skill-node:hover,
+.skill-node.active {
+  transform: translate(-50%, -50%) scale(1.06);
+  border-color: rgba(56, 189, 248, 0.75);
+  background: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.18);
+}
+
+.node-core {
+  min-width: 146px;
+  min-height: 86px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.82), rgba(167, 139, 250, 0.78));
+}
+
+.node-backend { border-color: rgba(56, 189, 248, 0.35); }
+.node-qa { border-color: rgba(167, 139, 250, 0.38); }
+.node-data { border-color: rgba(52, 211, 153, 0.35); }
+.node-frontend { border-color: rgba(251, 191, 36, 0.35); }
+.node-docs { border-color: rgba(244, 114, 182, 0.35); }
+
+.skill-details {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skill-details h3 {
+  font-size: 1.45rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.skill-details p:not(.section-label) {
+  color: var(--muted);
+}
+
+.skill-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.skill-detail-tags span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.1);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .skills-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-map-card {
+    min-height: auto;
+  }
+
+  .skills-map {
+    min-height: 620px;
+  }
+
+  .skill-node {
+    min-width: 112px;
+  }
+
+  .skill-node.small {
+    min-width: 94px;
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-map {
+    min-height: 720px;
+  }
+
+  .skill-node {
+    min-width: 98px;
+    min-height: 58px;
+    padding: 9px;
+  }
+
+  .skill-node strong {
+    font-size: 0.78rem;
+  }
+
+  .skill-node span {
+    font-size: 0.68rem;
+  }
+
+  .skill-node.small {
+    min-width: 82px;
+    min-height: 42px;
+  }
+}

@@ -131,63 +131,88 @@
     </section>
 
     <section class="section" id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">Skills</p>
-          <h2>Technologies and tools I use</h2>
-          <p>
-            A focused stack for backend development, testing, databases and documentation.
-          </p>
-        </div>
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">Skills</p>
+      <h2>How my skills connect</h2>
+      <p>
+        A visual map of the technologies and areas I am currently using and improving:
+        backend development, QA testing, databases, frontend basics and documentation.
+      </p>
+    </div>
 
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>Backend & Programming</h3>
-            <div class="skill-list">
-              <span>C#</span>
-              <span>.NET Web API</span>
-              <span>Java</span>
-              <span>REST APIs</span>
-              <span>Entity Framework Core</span>
-            </div>
-          </article>
+    <div class="skills-map-layout">
+      <div class="skills-map-card">
+        <div class="skills-map" id="skillsMap" aria-label="Interactive skills map">
+          <svg class="skills-lines" viewBox="0 0 900 520" preserveAspectRatio="none" aria-hidden="true">
+            <line class="skill-line line-backend" x1="450" y1="260" x2="450" y2="90"></line>
+            <line class="skill-line line-qa" x1="450" y1="260" x2="740" y2="170"></line>
+            <line class="skill-line line-data" x1="450" y1="260" x2="700" y2="390"></line>
+            <line class="skill-line line-frontend" x1="450" y1="260" x2="200" y2="390"></line>
+            <line class="skill-line line-docs" x1="450" y1="260" x2="160" y2="170"></line>
 
-          <article class="skill-card">
-            <h3>Databases & Data</h3>
-            <div class="skill-list">
-              <span>SQL Server</span>
-              <span>MySQL</span>
-              <span>Microsoft Access</span>
-              <span>SQL Queries</span>
-              <span>Excel Reports</span>
-            </div>
-          </article>
+            <line class="skill-line line-backend" x1="450" y1="90" x2="330" y2="55"></line>
+            <line class="skill-line line-backend" x1="450" y1="90" x2="575" y2="55"></line>
+            <line class="skill-line line-qa" x1="740" y1="170" x2="805" y2="90"></line>
+            <line class="skill-line line-qa" x1="740" y1="170" x2="815" y2="250"></line>
+            <line class="skill-line line-data" x1="700" y1="390" x2="590" y2="465"></line>
+            <line class="skill-line line-data" x1="700" y1="390" x2="815" y2="455"></line>
+            <line class="skill-line line-frontend" x1="200" y1="390" x2="90" y2="455"></line>
+            <line class="skill-line line-frontend" x1="200" y1="390" x2="315" y2="465"></line>
+            <line class="skill-line line-docs" x1="160" y1="170" x2="95" y2="90"></line>
+            <line class="skill-line line-docs" x1="160" y1="170" x2="80" y2="250"></line>
+          </svg>
 
-          <article class="skill-card">
-            <h3>QA & Testing</h3>
-            <div class="skill-list">
-              <span>Postman</span>
-              <span>API Testing</span>
-              <span>Manual Testing</span>
-              <span>Test Cases</span>
-              <span>Bug Reports</span>
-            </div>
-          </article>
+          <button class="skill-node node-core" data-skill="core" style="--x: 50%; --y: 50%;">
+            <strong>Joss</strong><span>Tech Profile</span>
+          </button>
 
-          <article class="skill-card">
-            <h3>Frontend & Tools</h3>
-            <div class="skill-list">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>VS Code</span>
-            </div>
-          </article>
+          <button class="skill-node node-backend" data-skill="backend" style="--x: 50%; --y: 17%;">
+            <strong>Backend</strong><span>.NET APIs</span>
+          </button>
+          <button class="skill-node node-backend small" data-skill="csharp" style="--x: 36%; --y: 9%;"><strong>C#</strong></button>
+          <button class="skill-node node-backend small" data-skill="efcore" style="--x: 64%; --y: 9%;"><strong>EF Core</strong></button>
+
+          <button class="skill-node node-qa" data-skill="qa" style="--x: 82%; --y: 32%;">
+            <strong>QA Testing</strong><span>Quality</span>
+          </button>
+          <button class="skill-node node-qa small" data-skill="postman" style="--x: 90%; --y: 17%;"><strong>Postman</strong></button>
+          <button class="skill-node node-qa small" data-skill="bugs" style="--x: 91%; --y: 48%;"><strong>Bug Reports</strong></button>
+
+          <button class="skill-node node-data" data-skill="data" style="--x: 78%; --y: 75%;">
+            <strong>Databases</strong><span>SQL / Data</span>
+          </button>
+          <button class="skill-node node-data small" data-skill="sqlite" style="--x: 66%; --y: 89%;"><strong>SQLite</strong></button>
+          <button class="skill-node node-data small" data-skill="excel" style="--x: 91%; --y: 87%;"><strong>Excel</strong></button>
+
+          <button class="skill-node node-frontend" data-skill="frontend" style="--x: 22%; --y: 75%;">
+            <strong>Frontend</strong><span>Web UI</span>
+          </button>
+          <button class="skill-node node-frontend small" data-skill="htmlcss" style="--x: 10%; --y: 87%;"><strong>HTML/CSS</strong></button>
+          <button class="skill-node node-frontend small" data-skill="javascript" style="--x: 35%; --y: 89%;"><strong>JavaScript</strong></button>
+
+          <button class="skill-node node-docs" data-skill="docs" style="--x: 18%; --y: 32%;">
+            <strong>Documentation</strong><span>README / Docs</span>
+          </button>
+          <button class="skill-node node-docs small" data-skill="github" style="--x: 10%; --y: 17%;"><strong>GitHub</strong></button>
+          <button class="skill-node node-docs small" data-skill="technical" style="--x: 9%; --y: 48%;"><strong>Technical Docs</strong></button>
         </div>
       </div>
-    </section>
+
+      <aside class="skill-details" id="skillDetails">
+        <p class="section-label">Selected Skill</p>
+        <h3>Connected technical profile</h3>
+        <p>
+          Hover or tap a node to explore how each skill connects with my projects,
+          learning roadmap and professional goals.
+        </p>
+        <div class="skill-detail-tags">
+          <span>.NET</span><span>QA</span><span>SQL</span><span>GitHub</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="projects">
       <div class="container">
@@ -207,13 +232,13 @@
             </div>
             <h3>InventoryApi</h3>
             <p>
-              REST API for inventory management built with .NET, C#, Entity Framework Core and SQL Server.
+              REST API for inventory management built with .NET, C#, Entity Framework Core and SQLite.
               Includes CRUD operations, database connection, API endpoints and Postman testing.
             </p>
             <div class="project-tech">
               <span>.NET</span>
               <span>C#</span>
-              <span>SQL Server</span>
+              <span>SQLite</span>
               <span>Postman</span>
             </div>
             <a href="https://github.com/HITKI0812/InventoryApi" target="_blank" rel="noopener noreferrer">View Repository →</a>
@@ -288,7 +313,7 @@
             <span>01</span>
             <div>
               <h3>Backend Development</h3>
-              <p>.NET Web API, Entity Framework Core, SQL Server, REST architecture and API documentation.</p>
+              <p>.NET Web API, Entity Framework Core, SQLite, REST architecture and API documentation.</p>
             </div>
           </div>
 
